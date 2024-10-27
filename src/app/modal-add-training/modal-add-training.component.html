@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="medium" (click)="cancel()">Voltar</ion-button>
+    </ion-buttons>
+    <ion-title>Adicione Treino</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="confirm()" [strong]="true">Salvar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-input labelPlacement="stacked" label="Nome do treino" [(ngModel)]="name" placeholder="nome"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input labelPlacement="stacked" label="URL da imagem" [(ngModel)]="image" placeholder="URL"></ion-input>
+  </ion-item>
+</ion-content>

@@ -1,0 +1,27 @@
+.header {
+    margin-top: 80px;
+    margin-bottom: 60px;
+    text-align: center;
+
+    .title {
+        font-size: 2rem;
+    }
+    .subtitle {
+        color: #808080;
+        font-size: 1rem;
+    }
+}
+
+.input {
+    font-size: 16px;
+}
+
+ion-item {
+    background: #85858500;
+    border-radius: 10px;
+    margin-bottom: 16px;
+}
+
+.btn-enter {
+    text-align: center;
+}

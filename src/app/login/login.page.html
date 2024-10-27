@@ -1,0 +1,27 @@
+<ion-content [fullscreen]="true">
+  <div class="header">
+    <ion-title class="title">Seja bem-vindo</ion-title>
+    <p class="subtitle">Faça login para acessar o aplicativo</p>
+  </div>
+
+  <form [formGroup]="formLogin">
+    <div class="ion-padding">
+      <ion-item>
+        <ion-input class="input" formControlName="email" type="email" placeholder="email"></ion-input>
+        <ion-icon name="person-outline"></ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-input class="input" formControlName="password" type="password" placeholder="senha">
+          <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+        </ion-input>
+        <ion-icon name="lock-closed-outline"></ion-icon>
+      </ion-item>
+      <div class="signup">
+        <p><a [routerLink]="['/signup']">Inscreva-se</a></p>
+      </div>
+    </div>
+    <div class="btn-enter">
+      <ion-button (click)="login()">Entrar</ion-button>
+    </div>
+  </form>
+</ion-content>

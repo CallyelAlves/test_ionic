@@ -1,20 +1,96 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+<ion-menu contentId="main-content">
+  <ion-header>
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title>Menu Content</ion-title>
     </ion-toolbar>
   </ion-header>
+  <!-- <ion-content class="ion-padding">This is the menu content.</ion-content> -->
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <ion-footer>
+    <ion-toolbar class="ion-text-center">
+      <ion-button (click)="logout()"><ion-icon name="exit"></ion-icon> Sair</ion-button>
+    </ion-toolbar>
+  </ion-footer>
+</ion-menu>
+
+<ion-content [fullscreen]="true">
+  <div class="ion-page" id="main-content">
+    <ion-header>
+      <ion-toolbar class="header">
+        <div class="ion-text-center">
+          <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+          </ion-buttons>
+
+          <img src="../../assets/images/logo.png" alt="Logo" width="100">
+
+          <ion-buttons end>
+            <ion-button ion-button clear icon-only color="button-color" class="button-notificacao">
+              <ion-icon name="notifications"></ion-icon>
+              <ion-badge color="success" style="border-radius: 50%;">1</ion-badge>
+            </ion-button>
+          </ion-buttons>
+        </div>
+
+        <ion-item lines="none" class="avatar-card">
+          <ion-avatar slot="start">
+            <img alt="foto do perfil" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+          </ion-avatar>
+          <ion-label>{{userName}} <br> <span>Nível Roxo</span></ion-label>
+        </ion-item>
+        <div class="ion-text-center chip">
+          <p><ion-icon class="accessibility" name="accessibility"></ion-icon> Meu corpo</p>
+          <p><ion-icon class="trophy" name="trophy"></ion-icon> Obejetivos e conquistas</p>
+        </div>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <div>
+        <h2 class="section-title">Personal online <ion-icon (click)="addTraining()" class="btn-add" name="add-circle-outline"></ion-icon></h2>
+        <swiper-container [slidesPerView]="1.4">
+          <swiper-slide>
+            <div class="program-card">
+              <img src="../../assets/images/levantamento.jpg" class="program-img">
+              <div class="overlay-add">
+                <ion-icon name="add-circle-outline" class="icon-center" (click)="addTraining()"></ion-icon>
+                <p class="title-center">NOVO <br>TREINO</p>
+              </div>
+            </div>
+          </swiper-slide>
+
+          @if (trainings.length > 0) {
+            @for (training of trainings; track training.id) {
+              <swiper-slide>
+                <div class="program-card">
+                  <img [src]="training.imageUrl" class="program-img">
+                  <div class="overlay">
+                    <h2 class="title">{{training.title}}</h2>
+                  </div>
+                </div>
+              </swiper-slide>
+            }
+          }
+        </swiper-container>
+      </div>
+      
+      @if (programs.length > 0) {
+        <div>
+          <h2 class="section-title">Programas <ion-badge color="warning">NOVO</ion-badge></h2>
+          <swiper-container [slidesPerView]="1.4">
+            @for (program of programs; track program.id) {
+              <swiper-slide>
+                <div class="program-card">
+                  <img [src]="program.imageUrl" class="program-img">
+                  <div class="overlay">
+                    <p class="status">{{program.started ? "continuar treinando" : ""}}</p>
+                    <h2 class="title">{{program.title}}</h2>
+                  </div>
+                </div>
+              </swiper-slide>
+            }
+          </swiper-container>
+        </div>
+      }
+    </ion-content>
   </div>
 </ion-content>

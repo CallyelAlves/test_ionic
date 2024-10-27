@@ -1,0 +1,50 @@
+<ion-content [fullscreen]="true">
+  <div class="header">
+    <ion-title class="title">Seja bem-vindo</ion-title>
+    <p class="subtitle">Inscreva-se para ter acesso ao app</p>
+  </div>
+
+  <form [formGroup]="form">
+    <div class="ion-padding">
+      <ion-item>
+        <ion-input class="input" formControlName="name" placeholder="nome"></ion-input>
+        <ion-icon name="person-outline"></ion-icon>
+      </ion-item>
+      <ion-note *ngIf="form.get('name')?.hasError('required') && form.get('name')?.touched" color="danger">
+        O nome é obrigatório.
+      </ion-note>
+
+      <ion-item>
+        <ion-input class="input" formControlName="email" type="email" placeholder="email"></ion-input>
+        <ion-icon name="mail-outline"></ion-icon>
+      </ion-item>
+      <ion-note *ngIf="form.get('email')?.hasError('required') && form.get('email')?.touched" color="danger">
+        O e-mail é obrigatório.
+      </ion-note>
+      <ion-note *ngIf="form.get('email')?.hasError('email') && form.get('email')?.touched" color="danger">
+        Insira um e-mail válido.
+      </ion-note>
+
+      <ion-item>
+        <ion-input class="input" formControlName="password" type="password" placeholder="senha">
+          <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+        </ion-input>
+        <ion-icon name="lock-closed-outline"></ion-icon>
+      </ion-item>
+      <ion-note *ngIf="form.get('password')?.hasError('required') && form.get('password')?.touched" color="danger">
+        A senha é obrigatória.
+      </ion-note>
+      <ion-note *ngIf="form.get('password')?.hasError('minlength') && form.get('password')?.touched" color="danger">
+        A senha deve ter no mínimo 6 caracteres.
+      </ion-note>
+
+      <div>
+        <p>Já é inscrito? <a [routerLink]="['/login']">Login</a></p>
+      </div>
+    </div>
+
+    <div class="btn-enter">
+      <ion-button (click)="signup()" [disabled]="form.invalid">Entrar</ion-button>
+    </div>
+  </form>
+</ion-content>

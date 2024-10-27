@@ -1,27 +1,133 @@
-#container {
-  text-align: center;
+.header {
+  padding-bottom: 1rem;
+  border-radius: 0rem 0rem 2.5rem 2.5rem;
 
+  div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  ion-badge {
+    margin-top: -15px;
+    margin-left: -10px;
+    font-size: 6px;
+  }
+
+  .avatar-card {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+
+    ion-avatar {
+      width: 65px;
+      height: 65px;
+    }
+
+    span {
+      font-size: 12px;
+      font-weight: 700;
+      color: purple;
+    }
+  }
+
+  .chip {
+    margin: auto;
+    padding: 0 .5rem;
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: #181818;
+    color: rgb(212, 138, 0);
+    border-radius: 2rem;
+    text-transform: uppercase;
+    font-size: 12px;
+
+    P {
+      margin-left: 8px;
+    }
+  }
+}
+
+.program-card {
+  margin-bottom: 18px;
+  position: relative;
+  width: 220px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.program-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
   position: absolute;
+  bottom: 4px;
+  left: 8px;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.overlay-add {
+  position: absolute;
+  top: 0;
   left: 0;
   right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+
+  p {
+    text-align: start;
+  }
+
+  ion-icon {
+    font-size: 44px;
+  }
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.status {
+  margin-bottom: 5px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #f39c12;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
+.title {
   margin: 0;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
-#container a {
-  text-decoration: none;
+.section-title {
+  margin-top: 0px;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  color: white;
+}
+
+ion-badge {
+  font-size: 6px;
+  margin-bottom: 4px;
+}
+
+.btn-add {
+  position: relative;
+  font-size: 26px;
+  color: #f39c12;
+  top: 5px;
 }
