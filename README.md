@@ -35,7 +35,7 @@ Esse projeto é um desafio requerido pela empresa Be220, com o objetivo de demon
 
 - Clone o repositório
 - Instale as dependências com `npm i`
-- Configure as variaveis de ambiente do firebase criando um arquivo com o nome `environment.ts` e adicione o objeto `firebaseConfig`
+- Configure as variáveis de ambiente do firebase adicionando o objeto `firebaseConfig` no arquivo `environment.ts` e configurando o Firebase Authentication e Firestore Database
 - Inicie o servidor com `ionic serve`
 
 Agora você pode acessar [`localhost:8100`](http://localhost:8100) do seu navegador.
